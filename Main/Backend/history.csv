@@ -1,0 +1,2 @@
+filename,prediction,confidence,timestamp
+example-ransomware.json,report_ransomware,100.0,2025-07-01T15:21:32

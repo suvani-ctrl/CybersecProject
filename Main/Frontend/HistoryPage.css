@@ -1,0 +1,149 @@
+/* Container & Layout */
+.history-page {
+    max-width: 980px;
+    margin: var(--space-md) auto var(--space-xl);
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-main);
+    color: var(--color-bg-dark);
+    user-select: none;
+    animation: fadeInUp 0.5s var(--transition) forwards;
+  }
+  
+  .history-page h2 {
+    font-size: 2.4rem;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 0 8px var(--color-primary-light);
+  }
+  
+  /* Table Wrapping */
+  .history-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--color-shadow);
+    margin-bottom: var(--space-lg);
+  }
+  
+  /* Table Styling */
+  .history-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 var(--space-xs);
+    font-size: 1rem;
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+  }
+  
+  .history-table thead tr th {
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    padding: 0.8rem 1rem;
+    border-bottom: 2px solid var(--color-primary-light);
+    background-color: var(--color-bg);
+    user-select: none;
+  }
+  
+  .history-table tbody tr {
+    background-color: var(--color-bg-light);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.08);
+    transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    cursor: default;
+    border-radius: var(--radius-sm);
+    user-select: text;
+  }
+  
+  .history-table tbody tr:hover {
+    background-color: var(--color-bg);
+    box-shadow: var(--color-shadow-hover);
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .history-table tbody tr td {
+    padding: 0.8rem 1rem;
+    vertical-align: middle;
+    border-bottom: none;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Status Cell Coloring */
+  .history-table tbody tr td:nth-child(5) {
+    font-weight: var(--font-weight-bold);
+    user-select: none;
+  }
+  
+  /* Charts Row */
+  .charts-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    user-select: none;
+  }
+  
+  /* Chart Card */
+  .chart-card {
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+    box-shadow: var(--color-shadow);
+    flex: 1 1 320px;
+    max-width: 480px;
+    color: var(--color-bg-dark);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  .chart-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--color-shadow-hover);
+  }
+  
+  .chart-card h3 {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 0 6px var(--color-primary-light);
+    user-select: none;
+  }
+  
+  /* Tooltip Legend tweaks from Recharts */
+  .recharts-legend-item text {
+    font-weight: var(--font-weight-bold);
+    user-select: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .charts-row {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .chart-card {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 720px) {
+    .history-table thead tr th,
+    .history-table tbody tr td {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
+  }
+  
